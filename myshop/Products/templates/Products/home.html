@@ -1,0 +1,11 @@
+{% load static %}
+<div align="center">
+    {% for product in products %}
+    <div>
+        <a href="{% url 'product-detail' product.id %}"><h3>{{product.name}}</h3></a>
+        <img src="{{product.productImg.url}}" alt="{{product.name}} img" width="150" height="100">
+        <p>Rs. {{product.price}}</p>
+        <p>Ratings: {{product.ratings}}</p>
+    </div>
+{% endfor %}
+</div>
